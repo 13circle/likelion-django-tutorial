@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordcount - Home</title>
+</head>
+<body>
+    <h1>Enter words to count</h1>
+    <a href="{%url 'about' %}">ABOUT</a>
+    <form name="wordcount_input_form" method="GET" action="{%url 'result' %}">
+        <textarea cols="40" rows="10" name="fulltext"></textarea>
+        <br>
+        <input type="submit" value="Count">
+    </form>
+</body>
+</html>

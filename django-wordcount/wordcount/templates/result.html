@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordcount - Result</title>
+</head>
+<body>
+    <h1>Wordcount Result</h1>
+    <h2>Your text has {{ total }} word(s) in total</h2>
+    <br>
+    <ul>
+        <li>
+            <label>Text entered: </label>
+            <pre>{{ full }}</pre>
+        </li>
+        <li>
+            <label>Word Frequency: </label>
+            {% for word, freq in wdict %}
+                <p>{{ word }}: {{ freq }}</p>
+            {% endfor %}
+        </li>
+    </ul>
+    <br>
+    <a href="{%url 'home' %}">Back to home</a>
+</body>
+</html>
