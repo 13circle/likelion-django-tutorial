@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .title_banner {
+            background-color: dodgerblue;
+            color: white;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            padding-left: 1em;
+        }
+        .blog_w {
+            border: 2px solid lightgrey;
+            border-radius: 1em;
+            margin-left: 2em;
+            margin-right: 2em;
+            margin-bottom: 2em;
+            padding-left: 1em;
+            padding-right: 1em;
+            transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+        }
+        .blog_w:hover {
+            background-color: dodgerblue;
+            border-color: white;
+            color: white;
+        }
+        .d-flex-r {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .d-flex-c {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .btn_admin {
+            border: none;
+            font-weight: bold;
+            background-color: dodgerblue;
+            width: 12em; height: 4em;
+            border-radius: 1em;
+            color: white;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn_admin:hover {
+            cursor: pointer;
+            border: 2px solid dodgerblue;
+            background-color: white;
+            color: dodgerblue;
+        }
+    </style>
+    <title>My First Blog</title>
+</head>
+<body>
+    <h1 class="title_banner">My First Blog! Yeah!</h1>
+    {% for blog in blogs.all %}
+        <div class="blog_w">
+            <h2>{{ blog.title }}</h2>
+            <p>{{ blog.pub_date }}</p>
+            <p>{{ blog.body }}</p>
+        </div>
+    {% endfor %}
+    <div class="d-flex-r">
+        <button class="btn_admin" onclick="window.location.href='/admin';">
+            Go to admin menu
+        </button>
+    </div>
+</body>
+</html>
