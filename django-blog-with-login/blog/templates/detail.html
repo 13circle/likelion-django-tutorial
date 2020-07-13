@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="container d-flex flex-row justify-content-center">
+    <div class="mt-5">
+        <h1>{{blog.title}}</h1>
+        <p>{{blog.pub_date}}</p>
+        <textarea class="blog_body border-0 overflow-auto bg-white" spellcheck="false" disabled>{{blog.body}}</textarea>
+        <br>
+    </div>
+</div>
+
+<div class="link-btn-container container d-flex flex-row justify-content-center mt-5 overflow-auto"></div>
+
+<script>
+    document.querySelector('title').innerHTML = '{{blog.title}}';
+</script>
+{% endblock %}

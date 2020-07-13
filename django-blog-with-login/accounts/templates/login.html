@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<div class="container mt-5">
+
+    <h1>Sign In</h1>
+
+    <form method="POST" action="{%url 'login' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input class="form-control" type="text" name="username" id="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input class="btn btn-success form-control" type="submit" value="Sign In">
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

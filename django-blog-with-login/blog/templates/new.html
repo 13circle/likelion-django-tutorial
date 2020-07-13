@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="container d-flex flex-row justify-content-center mt-5">
+    <form action="{%url 'create' %}">
+        <h1 class="mb-5">Upload new blog</h1>
+        <div class="form-group d-flex flex-row">
+            <label for="title" class="new-label">Title/Subject</label>
+            <input type="text" class="form-control ml-4" name="title" id="title">
+        </div>
+        <div class="form-group">
+            <label for="body" class="new-label">Body</label>
+            <textarea class="form-control" name="body" id="body" cols="70" rows="10"></textarea>
+        </div>
+        <div class="form-group d-flex flex-row justify-content-center">
+            <input class="btn btn-success col-sm-5" type="submit" value="Upload">
+        </div>
+    </form>
+</div>
+
+<script>
+    document.querySelector('title').innerHTML = 'Upload Writing';
+</script>
+{% endblock %}
