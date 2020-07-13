@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<div class="container d-flex flex-row justify-content-center">
+    <div class="overflow-auto">
+        {% for blog in posts %}
+            <div class="blog_w" 
+                data-toggle="tooltip" data-html="true" data-placement="top" title="Click to see<br>'{{blog.title}}'<br>in detail" 
+                onclick="window.location.href = '/blog/{{blog.id}}';">
+                <h2>{{blog.title}}</h2>
+                <p>{{blog.pub_date}}</p>
+                <p>{{blog.summary}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container d-flex flex-row justify-content-center">
+    <div>
+        {% if posts.has_previous %}
+            <a href="?page=1">First</a>
+            <a href="?page={{posts.previous_page_number}}">Previous</a>
+        {% endif %}
+        <span>{{posts.number}}</span>
+        <span> of </span>
+        <span>{{posts.paginator.num_pages}}</span>
+        {% if posts.has_next %}
+            <a href="?page={{posts.next_page_number}}">Next</a>
+            <a href="?page={{posts.paginator.num_pages}}">Last</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
